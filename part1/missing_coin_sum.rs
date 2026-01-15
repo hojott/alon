@@ -20,35 +20,18 @@ fn main() {
     }
 
     coins.sort();
-    
-    let mut sum = 1;
-    while sum <= 1_000_000_000 {
-        if find_sum(sum, &coins) {
-            sum += 1
-        } else {
+ 
+    let mut sum = 0;
+    for coin in &coins {
+        if *coin > sum + 1 {
             break
+        } else {
+            sum += coin;
         }
     }
 
+    sum += 1;
+
     println!("{}", sum);
-}
-
-
-fn find_sum(sum: i64, coins: &Vec<i64>) -> bool {
-    if sum == 0 { return true }
-    if sum < 0 { return false }
-
-    for (i, coin) in coins.into_iter().enumerate() {
-        if *coin > sum { return false }
-        if *coin == 0 { continue }
-
-        let mut coins_clone = coins.clone();
-        coins_clone[i] = 0;
-
-        if find_sum(sum-coin, &coins_clone) { return true }
-    }
-
-    return false
-
 }
 

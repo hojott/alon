@@ -16,7 +16,7 @@ fn main() {
         let mut spessu = 0;
         let mut v = 0;
 
-        for j in 1..18 {
+        for j in 1..19 {
             if spessu == 0 && !((n+1) % 2_usize.pow(j-1) == 0) {
                 spessu = 2_usize.pow(j-1);
             }
@@ -31,11 +31,14 @@ fn main() {
                 println!("(n: {}, i: {}, j: {}, v: {}, s: {})", n, i, j, v, spessu);
                 break;
             } else {
-                if j == 1 {
-                    v += n/2_usize.pow(j);
-                } else {
-                    v += 1 + (n - 2_usize.pow(j) + 1+2_usize.pow(j-1)-spessu)/2_usize.pow(j);
-                }
+                v += n/2_usize.pow(j);
+                if spessu == 0 && j != 1 { v += 1 }
+            }
+
+            if j == 18 {
+                v += 1;
+                println!("(n: {}, i: {}, j: {}, v: {}, s: {})", n, i, j, v, spessu);
+                break;
             }
         }
         
