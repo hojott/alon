@@ -17,7 +17,7 @@ Algorithms in Problem Solving
 ### Week 2  
 19.-25.1
 
-- [ ] [Concert Tickets](https://github.com/hojott/alon/blob/main/part1/concert_tickets.rs)
+- [x] [Concert Tickets](https://github.com/hojott/alon/blob/main/part1/concert_tickets.cpp)
 - [ ] [Room Allocation](https://github.com/hojott/alon/blob/main/part1/room_allocation.rs)
 - [ ] [Distinct Values Subarrays II](https://github.com/hojott/alon/blob/main/part1/distinct_values_subarrays_ii.rs)
 - [ ] [Josephus Problem II](https://github.com/hojott/alon/blob/main/part1/josephus_problem_ii.rs)
